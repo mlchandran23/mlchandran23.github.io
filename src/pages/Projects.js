@@ -1,4 +1,10 @@
+import { useEffect } from "react";
+
 function Projects() {
+  useEffect(() => {
+    document.title = "Projects | Matt Chandran Portfolio";
+  }, []);
+  
   return (
     <div>
       <h1>My Projects</h1>

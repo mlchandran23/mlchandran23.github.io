@@ -1,4 +1,10 @@
+import { useEffect } from "react";
+
 function Resume() {
+  useEffect(() => {
+    document.title = "Resume | Matt Chandran Portfolio";
+  }, []);
+
   return (
     <div>
       <h1>My Resume</h1>
