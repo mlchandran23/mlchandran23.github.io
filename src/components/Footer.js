@@ -4,8 +4,10 @@ function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer id="time-display">
-      {year}
+    <footer className="footer">
+      <div className="footer-content">
+        <p>&copy; {year} | Matthew Chandran | Built with React ⚛️</p>
+      </div>
     </footer>
   );
 }
