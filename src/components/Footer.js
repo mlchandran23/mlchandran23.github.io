@@ -1,12 +1,15 @@
-import '../App.css';
-
 function Footer() {
-  const year = new Date().getFullYear();
-
   return (
-    <footer className="footer">
-      <div className="footer-content">
-        <p>&copy; {year} | Matthew Chandran | Built with React ⚛️</p>
+    <footer className="bg-dark text-light mt-5 border-top border-success">
+      <div className="container py-4 text-center">
+        <h6 className="fw-bold mb-1">Matt Chandran</h6>
+        <p className="small text-secondary mb-2">
+          Computer Science Student | Aspiring For Career in Cybersecurity
+        </p>
+        <hr className="border-secondary my-3" />
+        <div className="small text-secondary">
+          © {new Date().getFullYear()} Matt Chandran | Built with React ⚛️
+        </div>
       </div>
     </footer>
   );
