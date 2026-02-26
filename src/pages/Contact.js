@@ -14,7 +14,7 @@ function Contact() {
 
   return (
     <div className="container my-5">
-      <h2 className="mb-4 text-center text-light">Contact Me</h2>
+      <h2 className="mb-4 text-center text-light">Contacts</h2>
       <p className="lead text-center mb-5 text-secondary">
         Actively seeking cybersecurity internship opportunities.
       </p>
