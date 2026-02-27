@@ -1,14 +1,7 @@
 import { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 
-function ProjectCard({ 
-  title, 
-  shortDesc, 
-  longDesc, 
-  githubLink, 
-  technologies = [], 
-  status 
-}) {
+function ProjectCard({ title, shortDesc, longDesc, githubLink, technologies = [], status }) {
   const [show, setShow] = useState(false);
 
   return (
@@ -16,17 +9,40 @@ function ProjectCard({
       {/* Card */}
       <div
         className="card bg-dark text-light border-success project-card"
-        style={{ cursor: "pointer", minHeight: "250px" }}
+        style={{ cursor: "pointer", minHeight: "280px", display: "flex", flexDirection: "column" }}
         onClick={() => setShow(true)}
       >
-        <div className="card-body">
+        <div className="card-body" style={{ flexGrow: 1 }}>
           <h5 className="card-title text-success">{title}</h5>
-          <p className="card-text">{shortDesc}</p>
+
           {status && (
-            <p className="mb-0" style={{ fontStyle: "italic", fontSize: "0.9rem" }}>
+            <p className="mb-1" style={{ fontStyle: "italic", fontSize: "0.9rem" }}>
               Status: {status}
             </p>
           )}
+
+          <p className="card-text">{shortDesc}</p>
+
+          {/* --- Show 2-3 tech badges on the card --- */}
+          {technologies.length > 0 && (
+            <div className="mb-2">
+              {technologies.slice(0, 3).map((tech, i) => (
+                <span
+                  key={i}
+                  className="badge bg-success me-1 mb-1"
+                  style={{ fontSize: "0.75rem" }}
+                >
+                  {tech}
+                </span>
+              ))} {technologies.length > 3 && (
+                  <span>+ {technologies.length - 3} more</span>
+                  )}
+            </div>
+          )}
+
+          <p className="mt-auto text-muted" style={{ fontSize: "0.8rem" }}>
+            Click to see details
+          </p>
         </div>
       </div>
 

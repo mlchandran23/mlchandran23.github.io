@@ -33,16 +33,12 @@ main {
   transform: translateY(-3px);
   transition: all 0.2s ease-in-out;
 }
+
 .project-card {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   transition: all 0.25s ease-in-out;
-}
-
-.project-card:hover {
-  transform: translateY(-6px); /* lifts the card */
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5); /* realistic depth shadow */
 }
 
 .project-card:hover {
