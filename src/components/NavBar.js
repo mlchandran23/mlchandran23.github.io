@@ -4,20 +4,9 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-3">
       <div className="container">
-        {/* Brand */}
         <Link className="navbar-brand fw-bold" to="/">
-          Matt Chandran
+          Matthew Chandran
         </Link>
-
-        {/* Mobile toggle button */}
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
 
         {/* Links */}
         <div className="collapse navbar-collapse" id="navbarNav">

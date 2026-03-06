@@ -7,7 +7,7 @@ function Contact() {
   }, []);
 
   const contacts = [
-    { label: "Email", value: "mattchandran23@gmail.com", link: "mailto:mattchandran23@gmail.com" },
+    { label: "Email", value: "mattchandran23@gmail.com", copy: true },
     { label: "LinkedIn", value: "Matthew Chandran", link: "https://www.linkedin.com/in/matthew-chandran-18bb56384/" },
     { label: "GitHub", value: "mlchandran23", link: "https://github.com/mlchandran23" },
   ];
@@ -26,6 +26,7 @@ function Contact() {
             label={item.label} 
             value={item.value} 
             link={item.link} 
+            copy={item.copy}
           />
         ))}
       </div>

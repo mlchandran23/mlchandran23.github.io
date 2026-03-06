@@ -13,7 +13,7 @@ function Projects() {
       shortDesc: "High-performance TCP port scanner built in Python.",
       longDesc:
         "Developed a multithreaded TCP port scanner using Python's ThreadPoolExecutor. Implemented banner grabbing, timeout handling, and open port detection. Designed for efficient network reconnaissance and cybersecurity testing.",
-      githubLink: "https://github.com/mlchandran23/",
+      githubLink: "https://github.com/mlchandran23/port-scanner",
       technologies: ["Python", "ThreadPoolExecutor", "Sockets", "TCP/IP"],
       status: "Completed",
     },
