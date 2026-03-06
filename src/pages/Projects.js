@@ -15,7 +15,7 @@ function Projects() {
         "Developed a multithreaded TCP port scanner using Python's ThreadPoolExecutor. Implemented banner grabbing, timeout handling, and open port detection. Designed for efficient network reconnaissance and cybersecurity testing.",
       githubLink: "https://github.com/mlchandran23/port-scanner",
       technologies: ["Python", "ThreadPoolExecutor", "Sockets", "TCP/IP"],
-      status: "Completed",
+      status: "In Progress",
     },
     {
       id: 2,
@@ -29,16 +29,6 @@ function Projects() {
     },
     {
       id: 3,
-      title: "Custom Network Traffic Analyzer",
-      shortDesc: "Packet inspection and analysis tool.",
-      longDesc:
-        "Created a lightweight network traffic analyzer capable of capturing and analyzing packet data. Focused on identifying suspicious traffic patterns and understanding TCP/IP protocol behavior for defensive security analysis.",
-      githubLink: "https://github.com/mlchandran23/",
-      technologies: ["Python", "ThreadPoolExecutor", "Sockets", "TCP/IP"],
-      status: "Completed",
-    },
-    {
-      id: 4,
       title: "Buckeye Flow",
       shortDesc: "Web Application to see Library Capacities at the Ohio State University.",
       longDesc:

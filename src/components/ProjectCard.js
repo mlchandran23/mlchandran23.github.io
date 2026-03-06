@@ -12,18 +12,13 @@ function ProjectCard({ title, shortDesc, longDesc, githubLink, technologies = []
         style={{ cursor: "pointer", minHeight: "280px", display: "flex", flexDirection: "column" }}
         onClick={() => setShow(true)}
       >
-        <div className="card-body" style={{ flexGrow: 1 }}>
-          <h5 className="card-title text-success">{title}</h5>
+        <div className="card-body d-flex flex-column">
 
-          {status && (
-            <p className="mb-1" style={{ fontStyle: "italic", fontSize: "0.9rem" }}>
-              Status: {status}
-            </p>
-          )}
+          <h5 className="card-title text-success">{title}</h5>
 
           <p className="card-text">{shortDesc}</p>
 
-          {/* --- Show 2-3 tech badges on the card --- */}
+          {/* Technologies */}
           {technologies.length > 0 && (
             <div className="mb-2">
               {technologies.slice(0, 3).map((tech, i) => (
@@ -34,15 +29,30 @@ function ProjectCard({ title, shortDesc, longDesc, githubLink, technologies = []
                 >
                   {tech}
                 </span>
-              ))} {technologies.length > 3 && (
-                  <span>+ {technologies.length - 3} more</span>
-                  )}
+              ))}
+              {technologies.length > 3 && (
+                <span style={{ fontSize: "0.75rem" }}>
+                  + {technologies.length - 3} more
+                </span>
+              )}
             </div>
           )}
 
-          <p className="mt-auto text-muted" style={{ fontSize: "0.8rem" }}>
-            Click to see details
-          </p>
+          {/* Bottom Section */}
+          <div className="mt-auto">
+
+            <p className="text-muted mb-1" style={{ fontSize: "0.8rem" }}>
+              Click to see details
+            </p>
+
+            {status && (
+              <p style={{ fontStyle: "italic", fontSize: "0.9rem" }}>
+                Status: {status}
+              </p>
+            )}
+
+          </div>
+
         </div>
       </div>
 
