@@ -9,12 +9,12 @@ function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Multithreaded Port Scanner",
+      title: "Port Scanner",
       shortDesc: "High-performance TCP port scanner built in Python.",
       longDesc:
-        "Developed a multithreaded TCP port scanner using Python's ThreadPoolExecutor. Implemented banner grabbing, timeout handling, and open port detection. Designed for efficient network reconnaissance and cybersecurity testing.",
+        "Developed an asynchronous TCP port scanner using Python's asyncio library. Implemented banner grabbing, timeout handling, and open port detection. Designed for cybersecurity testing.",
       githubLink: "https://github.com/mlchandran23/port-scanner",
-      technologies: ["Python", "ThreadPoolExecutor", "Sockets", "TCP/IP"],
+      technologies: ["Python", "Asyncio", "Sockets", "TCP/IP", "JSON"],
       status: "In Progress",
     },
     {
@@ -29,7 +29,7 @@ function Projects() {
     },
     {
       id: 3,
-      title: "Buckeye Flow",
+      title: "Buckeye Flow | Hack Ohio",
       shortDesc: "Web Application to see Library Capacities at the Ohio State University.",
       longDesc:
         "Created a Prototype Web Application at the Hack Ohio Hackathon that displays capacitites at Ohio State University Libraries. Uses React to display a map with color coded markers depending on open spaces, along with capacity data.",
@@ -37,6 +37,24 @@ function Projects() {
       technologies: ["React", "TypeScript", "Vite", "GitHub"],
       status: "Completed",
     },
+    {
+      id: 4,
+      title: "Buckeye CTF Write-Up",
+      shortDesc: "Writeups for the 2025 BuckeyeCTF competition at the Ohio State University",
+      longDesc: "",
+      githubLink: "https://github.com/mlchandran23/BuckeyeCTF-2025",
+      technologies: ["Python", "Bash", "WSL", "DOS", "Forensics"],
+      status: "Completed",
+    },
+    {
+      id: 5,
+      title: "Canvas GPA Calculator",
+      shortDesc: "Ruby tool that integrates with the Canvas API to retrieve grades, courses, and assignment data.",
+      longDesc: "",
+      githubLink: "https://github.com/mlchandran23/Canvas-GPA-Calculator",
+      technologies: ["Ruby", "API", "ENV", "JSON", "HTTParty"],
+      status: "Completed",
+    }
   ];
 
   return (
