@@ -6,6 +6,7 @@ function Projects() {
     document.title = "Projects | Matt Chandran Portfolio";
   }, []);
 
+  /* projects */
   const projects = [
     {
       id: 1,
@@ -19,38 +20,38 @@ function Projects() {
     },
     {
       id: 2,
-      title: "Trip Expense Tracker",
-      shortDesc: "Web Application for handling trip debts among friends.",
-      longDesc:
-        "Created a Web Application using Ruby on Rails, and CRUD APIs. Add trips and expenses to resolve debts for your friends.",
-      githubLink: "https://github.com/mlchandran23/TripExpenseTracker",
-      technologies: ["Ruby", "Rails", "SQLite", "CRUD API"],
+      title: "Buckeye CTF Write-Up",
+      shortDesc: "Writeups for the 2025 BuckeyeCTF competition at the Ohio State University",
+      longDesc: "Documented writeups for challenges completed during the 2025 BuckeyeCTF competition at The Ohio State University. Covered multiple categories including forensics, web, miscellaneous, etc. Analyzed challenge prompts, identified vulnerabilities, and developed solutions using tools such as Python, Bash, and Linux environments (WSL). Tasks included inspecting file metadata, leveraging command-line tools to extract hidden information, and finding exploits in web applications. This project demonstrates problem-solving under time constraints, familiarity with common CTF techniques, and the ability to communicate findings through structured writeups.",
+      githubLink: "https://github.com/mlchandran23/BuckeyeCTF-2025",
+      technologies: ["Python", "Bash", "WSL", "DOS", "Forensics"],
       status: "Completed",
     },
     {
       id: 3,
       title: "Buckeye Flow | Hack Ohio",
-      shortDesc: "Web Application to see Library Capacities at the Ohio State University.",
+      shortDesc: "Web Application to display Library Capacities at the Ohio State University.",
       longDesc:
-        "Created a Prototype Web Application at the Hack Ohio Hackathon that displays capacitites at Ohio State University Libraries. Uses React to display a map with color coded markers depending on open spaces, along with capacity data.",
+        "Created a Prototype Web Application at the Hack Ohio Hackathon that displays capacitites at Ohio State University Libraries. Uses React to display a map with color coded markers depending on open spaces, along with capacity data to provide quality of life improvements for students attend the Ohio State University.",
       githubLink: "https://github.com/mlchandran23/BuckeyeFlow",
       technologies: ["React", "TypeScript", "Vite", "GitHub"],
       status: "Completed",
     },
     {
       id: 4,
-      title: "Buckeye CTF Write-Up",
-      shortDesc: "Writeups for the 2025 BuckeyeCTF competition at the Ohio State University",
-      longDesc: "",
-      githubLink: "https://github.com/mlchandran23/BuckeyeCTF-2025",
-      technologies: ["Python", "Bash", "WSL", "DOS", "Forensics"],
+      title: "Trip Expense Tracker",
+      shortDesc: "Web Application for handling trip debts among friends using Ruby on Rails framework.",
+      longDesc:
+        "Created a Web Application using Ruby on Rails, and CRUD APIs. Add trips and expenses to resolve debts for your friends.",
+      githubLink: "https://github.com/mlchandran23/TripExpenseTracker",
+      technologies: ["Ruby", "Rails", "SQLite", "CRUD API", "MVC"],
       status: "Completed",
     },
     {
       id: 5,
       title: "Canvas GPA Calculator",
       shortDesc: "Ruby tool that integrates with the Canvas API to retrieve grades, courses, and assignment data.",
-      longDesc: "",
+      longDesc: "Built a Ruby application that utilizes Canvas API to automate academic data retrieval, including GPA calculation, grade lookup, course listings, and assignment tracking. Implemented REST API calls, JSON parsing, and token-based authentication to securely access and process user data. Designed the system to efficiently handle multiple endpoints and present organized outputs. Focused on secure handling of API tokens and minimizing exposure of sensitive data by utilizing environment variables.",
       githubLink: "https://github.com/mlchandran23/Canvas-GPA-Calculator",
       technologies: ["Ruby", "API", "ENV", "JSON", "HTTParty"],
       status: "Completed",
