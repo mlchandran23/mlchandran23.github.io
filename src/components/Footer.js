@@ -8,7 +8,7 @@ function Footer() {
         </p>
         <hr className="border-secondary my-3" />
         <div className="small text-secondary">
-          © {new Date().getFullYear()} Matthew Chandran | Built with React ⚛️ | Last Updated: March 2026
+          © {new Date().getFullYear()} Matthew Chandran | Built with React ⚛️ | Last Updated: 24 March 2026
         </div>
       </div>
     </footer>
