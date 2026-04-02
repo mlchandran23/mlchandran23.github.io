@@ -1,7 +1,7 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Footer from './components/Footer.js';
-import Navbar from './components/Navbar.js';
+import AppNavbar from './components/AppNavbar.js';
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Resume from "./pages/Resume";
@@ -11,7 +11,7 @@ function App() {
   return (
     <HashRouter>
       <div className="d-flex flex-column min-vh-100">
-        <Navbar />
+        <AppNavbar />
 
         <main className="flex-grow-1">
           <Routes>

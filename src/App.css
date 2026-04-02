@@ -13,6 +13,16 @@ height: 100%;
   border-radius: 0;
 }
 
+.nav-link:hover {
+  color: #198754 !important;
+}
+
+.nav-active {
+  color: #00ff7f !important; /* brighter green */
+  font-weight: 600;
+  border-bottom: 2px solid #00ff7f;
+}
+
 /* Make main content take all remaining space */
 main {
   flex: 1;
