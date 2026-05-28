@@ -1,97 +1,107 @@
-import { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import { useState, useEffect } from "react";
 
 function ProjectCard({ title, shortDesc, longDesc, githubLink, technologies = [], status }) {
-  const [show, setShow] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  // Lock scroll when modal is open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [open]);
+
+  // Close on Escape
+  useEffect(() => {
+    const handler = (e) => { if (e.key === "Escape") setOpen(false); };
+    if (open) window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [open]);
+
+  const statusClass = status === "Completed" ? "status-done" : "status-progress";
 
   return (
     <>
       {/* Card */}
       <div
-        className="card bg-dark text-light border-success project-card"
-        style={{ cursor: "pointer", minHeight: "280px", display: "flex", flexDirection: "column" }}
-        onClick={() => setShow(true)}
+        className="project-card fade-in"
+        onClick={() => setOpen(true)}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => e.key === "Enter" && setOpen(true)}
+        aria-label={`Open details for ${title}`}
       >
-        <div className="card-body d-flex flex-column">
-
-          <h5 className="card-title text-success">{title}</h5>
-
-          <p className="card-text">{shortDesc}</p>
-
-          {/* Technologies */}
-          {technologies.length > 0 && (
-            <div className="mb-2">
-              {technologies.slice(0, 3).map((tech, i) => (
-                <span
-                  key={i}
-                  className="badge bg-success me-1 mb-1"
-                  style={{ fontSize: "0.75rem" }}
-                >
-                  {tech}
-                </span>
-              ))}
-              {technologies.length > 3 && (
-                <span style={{ fontSize: "0.75rem" }}>
-                  + {technologies.length - 3} more
-                </span>
-              )}
-            </div>
-          )}
-
-          {/* Bottom Section */}
-          <div className="mt-auto">
-
-            <p className="text-muted mb-1" style={{ fontSize: "0.8rem" }}>
-              Click to see details
-            </p>
-
-            {status && (
-              <p style={{ fontStyle: "italic", fontSize: "0.9rem" }}>
-                Status: {status}
-              </p>
-            )}
-
-          </div>
-
+        <div className="pc-title">
+          <span>{title}</span>
+          {status && <span className={`pc-status ${statusClass}`}>{status}</span>}
         </div>
+
+        <p className="pc-desc">{shortDesc}</p>
+
+        {technologies.length > 0 && (
+          <div className="pc-tags">
+            {technologies.slice(0, 4).map((tech, i) => (
+              <span key={i} className="tag">{tech}</span>
+            ))}
+            {technologies.length > 4 && (
+              <span className="tag tag-muted">+{technologies.length - 4}</span>
+            )}
+          </div>
+        )}
+
+        <div className="pc-hint">↗ click to expand</div>
       </div>
 
       {/* Modal */}
-      <Modal show={show} onHide={() => setShow(false)} centered size="lg">
-        <Modal.Header closeButton className="bg-dark text-light border-success">
-          <Modal.Title className="text-success">{title}</Modal.Title>
-        </Modal.Header>
-
-        <Modal.Body className="bg-dark text-light">
-          {technologies.length > 0 && (
-            <div className="mb-4">
-              <h6 className="text-success mb-2">Key Technologies</h6>
-              {technologies.map((tech, index) => (
-                <span key={index} className="badge bg-success me-2 mb-2">
-                  {tech}
-                </span>
-              ))}
+      {open && (
+        <div
+          className="modal-overlay"
+          onClick={(e) => e.target === e.currentTarget && setOpen(false)}
+        >
+          <div className="modal-box">
+            <div className="modal-header">
+              <h3>{title}</h3>
+              <button
+                className="btn-icon"
+                onClick={() => setOpen(false)}
+                aria-label="Close"
+              >
+                ×
+              </button>
             </div>
-          )}
-          <p>{longDesc}</p>
-        </Modal.Body>
 
-        <Modal.Footer className="bg-dark border-success">
-          {githubLink && (
-            <Button
-              variant="outline-success"
-              href={githubLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View on GitHub
-            </Button>
-          )}
-          <Button variant="success" onClick={() => setShow(false)}>
-            Close
-          </Button>
-        </Modal.Footer>
-      </Modal>
+            <div className="modal-body">
+              {technologies.length > 0 && (
+                <div style={{ marginBottom: "var(--gap-md)" }}>
+                  <div className="skill-group-label" style={{ marginBottom: "0.5rem" }}>Technologies</div>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.35rem" }}>
+                    {technologies.map((tech, i) => (
+                      <span key={i} className="tag">{tech}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+              <p style={{ fontSize: "0.9rem", color: "var(--text-dim)", lineHeight: 1.7 }}>
+                {longDesc}
+              </p>
+            </div>
+
+            <div className="modal-footer">
+              {githubLink && (
+                <a
+                  className="btn-ghost"
+                  href={githubLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ↗ GitHub
+                </a>
+              )}
+              <button className="btn-primary" onClick={() => setOpen(false)}>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

@@ -1,43 +1,53 @@
 import { useEffect } from "react";
+import { SITE } from "../theme";
+import SectionHeading from "../components/SectionHeading";
 
 function Resume() {
   useEffect(() => {
-    document.title = "Resume | Matt Chandran Portfolio";
+    document.title = `Resume | ${SITE.name}`;
   }, []);
 
   return (
-    <div className="container py-5 text-light">
+    <main>
+      <div className="page-container">
 
-      <h1 className="text-center text-success mb-4">
-        Resume
-      </h1>
+        <SectionHeading label="// resume" title="Resume" />
 
-      <p className="text-center mb-4">
-        Download or preview my resume below.
-      </p>
-
-      {/* Download Button */}
-      <div className="text-center mb-4">
-        <a
-          href="/matthew_chandran_resume.pdf"
-          className="btn btn-success"
-          target="_blank"
-          rel="noopener noreferrer"
+        <div
+          className="fade-in"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "var(--gap-md)",
+            marginBottom: "var(--gap-lg)",
+          }}
         >
-          Download Resume
-        </a>
-      </div>
+          <p style={{ color: "var(--text-dim)", fontSize: "0.9rem" }}>
+            Preview below, or download the PDF directly.
+          </p>
 
-      {/* Embedded Resume Preview */}
-      <div className="ratio ratio-16x9 border border-success">
+          <a
+            href={SITE.resumePdf}
+            className="btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+          >
+            ↓ Download PDF
+          </a>
+        </div>
+
+        {/* PDF Preview */}
         <iframe
-          src="/matthew_chandran_resume.pdf"
-          title="Resume"
-          className="bg-light"
+          className="resume-preview fade-in fade-in-delay-1"
+          src={SITE.resumePdf}
+          title={`${SITE.name} Resume`}
         />
-      </div>
 
-    </div>
+      </div>
+    </main>
   );
 }
 
