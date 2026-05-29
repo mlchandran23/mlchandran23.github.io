@@ -1,10 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { NAV_LINKS, SITE } from "../theme";
 import { GitHubIcon, LinkedInIcon } from "./Icons";
 
+
 function AppNavbar() {
   const [open, setOpen] = useState(false);
+
+  const [theme, setTheme] = useState(() => {
+  return localStorage.getItem("theme") || "light";
+  });
+
+  useEffect(() => {
+  document.documentElement.setAttribute("data-theme", theme);
+  localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+  setTheme(t => (t === "light" ? "dark" : "light"));
+  };
 
   return (
     <nav className="site-navbar">
@@ -50,6 +64,16 @@ function AppNavbar() {
           <a href={SITE.linkedin} target="_blank" rel="noopener noreferrer" title="LinkedIn">
             <LinkedInIcon />
           </a>
+
+          {/* Theme toggle */}
+          <button
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            title="Toggle theme"
+          >
+            {theme === "light" ? "🌙" : "☀️"}
+          </button>
         </div>
 
       </div>
