@@ -1154,6 +1154,12 @@ a:hover { color: var(--accent-dark); }
   border-bottom: 1px solid var(--border);
 }
 
+/* Keep CTF image well white in dark mode — logo needs it */
+[data-theme="dark"] .ctf-img-wrap {
+  background: #ffffff;
+  border-bottom-color: rgba(255,255,255,0.08);
+}
+
 .theme-toggle {
   display: flex;
   align-items: center;
@@ -1185,18 +1191,19 @@ a:hover { color: var(--accent-dark); }
 /* ----------------------------------------------------------------
    21. CTF Writeups page
    ---------------------------------------------------------------- */
+
+/* Grid — wider min so images have room */
 .ctf-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
   gap: var(--gap-lg);
 }
 
-/* CTF Card */
+/* Card shell — no pointer cursor, not a button */
 .ctf-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  cursor: pointer;
   transition: var(--transition-slow);
   display: flex;
   flex-direction: column;
@@ -1207,33 +1214,42 @@ a:hover { color: var(--accent-dark); }
 
 .ctf-card:hover {
   border-color: var(--accent);
-  background: var(--bg-card-hover);
   box-shadow: var(--shadow-lg), 0 0 0 1px var(--accent);
   transform: translateY(-3px);
 }
 
-/* Image / placeholder area */
-.ctf-card .ctf-img {
+/* ── Image wrapper — fixed height, white bg for logos ── */
+.ctf-img-wrap {
+  position: relative;
   width: 100%;
-  height: 140px;
-  object-fit: cover;
-  display: block;
-  background: var(--accent-light);
-  border-bottom: 1px solid var(--border);
-  flex-shrink: 0;
-}
-
-.ctf-card .ctf-img-placeholder {
-  width: 100%;
-  height: 140px;
-  background: linear-gradient(135deg, var(--accent-light) 0%, var(--bg) 100%);
+  height: 200px;
+  background: #ffffff;
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-  position: relative;
   overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Actual image — contain so logos aren't cropped */
+.ctf-card .ctf-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 1.5rem;
+  display: block;
+}
+
+/* Placeholder when no image provided */
+.ctf-card .ctf-img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--bg) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ctf-card .ctf-img-placeholder::before {
@@ -1250,20 +1266,22 @@ a:hover { color: var(--accent-dark); }
 }
 
 .ctf-img-placeholder-icon {
-  font-size: 2.5rem;
-  opacity: 0.25;
+  font-size: 3rem;
+  opacity: 0.3;
   position: relative;
   z-index: 1;
 }
 
-/* Card category stripe */
+/* Category stripe pinned to the bottom of the image area */
 .ctf-category-stripe {
-  height: 3px;
-  width: 100%;
-  flex-shrink: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
 }
 
-.ctf-category-stripe.cat-web     { background: #3b82f6; }
+.ctf-category-stripe.cat-web      { background: #3b82f6; }
 .ctf-category-stripe.cat-forensics { background: #8b5cf6; }
 .ctf-category-stripe.cat-crypto   { background: #f59e0b; }
 .ctf-category-stripe.cat-pwn      { background: #ef4444; }
@@ -1271,7 +1289,7 @@ a:hover { color: var(--accent-dark); }
 .ctf-category-stripe.cat-misc     { background: #6b7280; }
 .ctf-category-stripe.cat-osint    { background: #06b6d4; }
 
-/* Card body */
+/* ── Card body ────────────────────────────────────── */
 .ctf-card .ctf-body {
   padding: var(--gap-lg);
   display: flex;
@@ -1289,7 +1307,7 @@ a:hover { color: var(--accent-dark); }
 
 .ctf-card .ctf-organizer {
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1305,15 +1323,22 @@ a:hover { color: var(--accent-dark); }
 
 .ctf-card .ctf-title {
   font-family: var(--font-display);
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--text-heading);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
   line-height: 1.35;
 }
 
+.ctf-card .ctf-event {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
 .ctf-card .ctf-desc {
-  font-size: 0.855rem;
+  font-size: 0.875rem;
   color: var(--text-dim);
   line-height: 1.65;
   flex: 1;
@@ -1324,13 +1349,41 @@ a:hover { color: var(--accent-dark); }
   display: flex;
   flex-wrap: wrap;
   gap: 0.3rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--gap-md);
 }
 
-.ctf-card .ctf-hint {
-  font-size: 0.72rem;
+/* Direct writeup link button — always at bottom of card */
+.ctf-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  align-self: flex-start;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1.5px solid var(--accent);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 1rem;
+  text-decoration: none;
+  transition: var(--transition);
+  margin-top: auto;
+}
+
+.ctf-link-btn:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px var(--accent-glow);
+}
+
+.ctf-link-btn--disabled {
+  cursor: default;
+  opacity: 0.5;
+  pointer-events: none;
+  border-color: var(--border);
   color: var(--text-muted);
-  font-weight: 500;
+  background: var(--bg);
 }
 
 /* Difficulty badge */
