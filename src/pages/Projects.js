@@ -23,7 +23,7 @@ function Projects() {
         <SectionHeading label="// projects" title="My Projects" />
 
         <p style={{ color: "var(--text-dim)", marginBottom: "var(--gap-lg)", fontSize: "0.9rem" }}>
-          A mix of cybersecurity tooling, full-stack applications, and CTF research.
+          A mix of cybersecurity tooling and full-stack applications.
           Click any card for details.
         </p>
 
