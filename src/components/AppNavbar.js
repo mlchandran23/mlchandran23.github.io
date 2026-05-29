@@ -24,10 +24,7 @@ function AppNavbar() {
     <nav className="site-navbar">
       <div className="navbar-inner">
 
-        <Link to="/" className="navbar-brand" onClick={() => setOpen(false)}>
-          <span className="brand-dot" aria-hidden="true" />
-          {SITE.name}
-        </Link>
+        
 
         {/* Mobile */}
         <button

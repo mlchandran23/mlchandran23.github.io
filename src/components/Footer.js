@@ -23,6 +23,17 @@ function Footer() {
 
       <div className="footer-copy">
         © {new Date().getFullYear()} {SITE.name} · Built with React · Last Updated: {SITE.lastUpdated}
+        <br></br><small style={{ opacity: 0.7, fontSize: "0.8rem" }}>
+          Hosted on GitHub Pages. No tracking cookies or personal data collected. View{" "}
+          <a 
+            href="https://github.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{ textDecoration: "underline" }}
+          >
+            GitHub Privacy
+          </a>.
+        </small>
       </div>
     </footer>
   );

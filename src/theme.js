@@ -180,13 +180,13 @@ export const AWARDS = [
     issuer: "U.S. National Science Foundation / The Ohio State University",
     date: "2024",
     description:
-      "Highly competitive U.S. government scholarship for students pursuing cybersecurity careers in federal service. Includes full tuition, stipend, and a post-graduation service commitment to a federal agency.",
+      "Highly competitive U.S. government scholarship for students pursuing cybersecurity careers in federal service.",
   },
   {
     name: "Dean's List",
     issuer: "The Ohio State University",
     date: "2023 – Present",
-    description: "Awarded each semester for maintaining a GPA of 3.5 or above.",
+    description: "Awarded for achieving semester GPA of 3.5 or above.",
   },
 ];
 

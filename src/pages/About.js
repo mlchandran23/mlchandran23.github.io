@@ -27,16 +27,16 @@ function About() {
               <p style={{ fontSize: "0.9rem", color: "var(--text-dim)", lineHeight: 1.8, marginBottom: "1rem" }}>
                 I'm an undergraduate student at <strong style={{ color: "var(--text-heading)" }}>The Ohio State University</strong> majoring
                 in Computer and Information Sciences with a specialization in{" "}
-                <strong style={{ color: "var(--accent)" }}>Information Computation Assurance</strong> — essentially cybersecurity.
+                <strong style={{ color: "var(--accent)" }}>Information Computation Assurance</strong><br></br> (Cyber Security).
               </p>
               <p style={{ fontSize: "0.9rem", color: "var(--text-dim)", lineHeight: 1.8, marginBottom: "1rem" }}>
                 I'm a recipient of the <strong style={{ color: "var(--text-heading)" }}>Buckeye CyberCorps SFS Scholarship</strong>, a
                 U.S. government cybersecurity scholarship with a post-graduation service commitment. I serve as{" "}
                 <strong style={{ color: "var(--text-heading)" }}>CTF Lead</strong> for the OSU Cybersecurity Club,
-                organizing competitions across web exploitation, cryptography, and reverse engineering.
+                organizing and leading competitions including web exploitation, cryptography, and reverse engineering.
               </p>
               <p style={{ fontSize: "0.9rem", color: "var(--text-dim)", lineHeight: 1.8 }}>
-                I'm currently seeking <strong style={{ color: "var(--accent)" }}>cybersecurity or technology internships</strong> where
+                I'm seeking <strong style={{ color: "var(--accent)" }}>cybersecurity internships</strong> where
                 I can apply skills developed through coursework, personal projects, and hands-on CTF competition.
               </p>
             </div>

@@ -60,7 +60,7 @@ function Home() {
 
         </section>
 
-        {/* ── Stats ───────────────────────────────────── */}
+        {/* ── Stats ───────────────────────────────────── 
         <div className="stat-row fade-in fade-in-delay-1">
           <div className="stat-item">
             <span className="stat-value">3.78</span>
@@ -78,7 +78,7 @@ function Home() {
             <span className="stat-value">SFS</span>
             <span className="stat-label">Scholar</span>
           </div>
-        </div>
+        </div> */}
 
         {/* ── Technical Skills ────────────────────────── */}
         <section className="fade-in fade-in-delay-2" style={{ marginBottom: "var(--gap-xl)" }}>
