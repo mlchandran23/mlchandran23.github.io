@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { NAV_LINKS, SITE } from "../theme";
-import { GitHubIcon, LinkedInIcon } from "./Icons";
+import { GitHubIcon, LinkedInIcon, SunIcon, MoonIcon } from "./Icons";
 
 
 function AppNavbar() {
@@ -72,7 +72,7 @@ function AppNavbar() {
             aria-label="Toggle theme"
             title="Toggle theme"
           >
-            {theme === "light" ? "🌙" : "☀️"}
+            {theme === "light" ? <MoonIcon /> : <SunIcon />}
           </button>
         </div>
 

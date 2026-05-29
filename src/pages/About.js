@@ -23,8 +23,8 @@ function About() {
             <div className="card-base fade-in" style={{ marginBottom: "var(--gap-xl)" }}>
               <p style={{ fontSize: "0.9rem", color: "var(--text-dim)", lineHeight: 1.8, marginBottom: "1rem" }}>
                 I'm an undergraduate student at <strong style={{ color: "var(--text-heading)" }}>The Ohio State University</strong> majoring
-                in Computer and Information Sciences with a specialization in <strong style={{ color: "var(--accent)" }}>Information Computation Assurance</strong> — 
-                essentially cybersecurity.
+                in Computer and Information Sciences with a specialization in <strong style={{ color: "var(--accent)" }}>Information Computation Assurance </strong> 
+                (Cybersecurity).
               </p>
               <p style={{ fontSize: "0.9rem", color: "var(--text-dim)", lineHeight: 1.8, marginBottom: "1rem" }}>
                 I'm a recipient of the <strong style={{ color: "var(--text-heading)" }}>Buckeye CyberCorps SFS Scholarship</strong>, a 
@@ -33,7 +33,7 @@ function About() {
                 where I organize and run Capture-The-Flag competitions across web exploitation, cryptography, and reverse engineering.
               </p>
               <p style={{ fontSize: "0.9rem", color: "var(--text-dim)", lineHeight: 1.8 }}>
-                I'm currently seeking <strong style={{ color: "var(--accent)" }}>cybersecurity or technology internships</strong> where 
+                I'm currently seeking <strong style={{ color: "var(--accent)" }}>cybersecurity internships</strong> where 
                 I can apply skills developed through coursework, personal projects, and hands-on CTF competition.
               </p>
             </div>
