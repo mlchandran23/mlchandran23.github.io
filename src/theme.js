@@ -19,11 +19,12 @@ export const SITE = {
 
 // --- Navigation ---
 export const NAV_LINKS = [
-  { label: "Home",     path: "/"         },
-  { label: "About",    path: "/about"    },
-  { label: "Projects", path: "/projects" },
-  { label: "Resume",   path: "/resume"   },
-  { label: "Contact",  path: "/contact"  },
+  { label: "Home",        path: "/"         },
+  { label: "About",       path: "/about"    },
+  { label: "Projects",    path: "/projects" },
+  { label: "CTF",         path: "/ctf"      },
+  { label: "Resume",      path: "/resume"   },
+  { label: "Contact",     path: "/contact"  },
 ];
 
 // --- Skills (used on Home + About) ---
@@ -59,17 +60,6 @@ export const PROJECTS = [
   },
   {
     id: 3,
-    title: "CTF Writeups Repository",
-    shortDesc: "Documented solutions to BuckeyeCTF 2025 across web, crypto, and forensics.",
-    longDesc:
-      "Documented writeups for challenges completed during the 2025 BuckeyeCTF competition at The Ohio State University. Covered web exploitation, cryptography, forensics, and miscellaneous categories. Used Burp Suite, Ghidra, Python, and Bash to identify and exploit vulnerabilities including insecure authentication and cryptographic weaknesses.",
-    githubLink: "https://github.com/mlchandran23/BuckeyeCTF-2025",
-    technologies: ["Python", "Bash", "WSL", "Burp Suite", "Forensics"],
-    status: "Completed",
-    featured: true,
-  },
-  {
-    id: 4,
     title: "Buckeye Flow | HackOhio",
     shortDesc: "React app showing real-time library capacity at Ohio State.",
     longDesc:
@@ -80,7 +70,7 @@ export const PROJECTS = [
     featured: false,
   },
   {
-    id: 5,
+    id: 4,
     title: "Canvas GPA Calculator",
     shortDesc: "Ruby tool integrating with the Canvas API for academic data.",
     longDesc:
@@ -91,7 +81,7 @@ export const PROJECTS = [
     featured: false,
   },
   {
-    id: 6,
+    id: 5,
     title: "Trip Expense Tracker",
     shortDesc: "Full-stack Rails app for splitting trip expenses among friends.",
     longDesc:
@@ -103,7 +93,40 @@ export const PROJECTS = [
   },
 ];
 
-// --- Experience (used on About + Resume) ---
+// --- CTF Writeups ---
+// image: path relative to /public, e.g. "/ctf/buckeye2025.png" — or null for placeholder
+export const CTF_WRITEUPS = [
+  {
+    id: 1,
+    challengeName: "Buckeye CTF 2025",
+    ctfName: "BuckeyeCTF 2025",
+    organizer: "The Ohio State University",
+    category: "Web",
+    difficulty: "Medium",
+    description:
+      "Identified and exploited an insecure authentication mechanism in a web application challenge. Analyzed HTTP requests with Burp Suite to discover a JWT signature bypass, then crafted a forged token to gain admin access.",
+    writeupLink: "https://github.com/mlchandran23/BuckeyeCTF-2025",
+    image: "../public/ctf/osu-cyber.svg",
+    technologies: ["Burp Suite", "JWT", "Python", "HTTP"],
+    placement: null,
+  },
+  {
+    id: 2,
+    challengeName: "Bootcamp CTF",
+    ctfName: "Bootcamp CTF",
+    organizer: "The Ohio State University",
+    category: "Forensics",
+    difficulty: "Easy",
+    description:
+      "Inspected file metadata and used Linux command-line tools to extract hidden information embedded in an image file. Applied steganography techniques and hex analysis to recover the flag.",
+    writeupLink: "https://github.com/mlchandran23/BuckeyeCTF-2025",
+    image: "../public/ctf/osu-cyber.svg",
+    technologies: ["Linux", "Bash", "Steganography", "Hex Analysis"],
+    placement: null,
+  },
+];
+
+// --- Experience ---
 export const EXPERIENCE = [
   {
     role: "Program Instructor",
@@ -133,11 +156,11 @@ export const EDUCATION = [
   {
     degree: "B.S. Computer and Information Sciences",
     school: "The Ohio State University",
+    location: "Columbus, OH",
     dates: "Aug. 2023 – May 2027 (expected)",
     gpa: "3.78",
     details: [
       "Specialization: Information Computation Assurance (Cybersecurity)",
-      "Buckeye CyberCorps SFS Scholarship Recipient",
       "CTF Lead, Cybersecurity Club",
       "Relevant Coursework: Operating Systems, Computer Networking, Web Applications, Low Level Programming",
     ],
@@ -145,30 +168,37 @@ export const EDUCATION = [
   {
     degree: "M.S. Computer Science and Engineering (Combined B.S./M.S.)",
     school: "The Ohio State University",
+    location: "Columbus, OH",
     dates: "May 2028 (expected)",
     gpa: null,
     details: [],
   },
 ];
 
-// --- Certifications ---
-export const CERTIFICATIONS = [
-  { name: "CompTIA Security+", status: "In Progress — Expected 2026" },
+// --- Awards & Honors ---
+export const AWARDS = [
+  {
+    name: "Buckeye CyberCorps SFS Scholarship",
+    issuer: "U.S. National Science Foundation / The Ohio State University",
+    date: "2024",
+    description:
+      "Highly competitive U.S. government scholarship for students pursuing cybersecurity careers in federal service. Includes full tuition, stipend, and a post-graduation service commitment to a federal agency.",
+  },
+  {
+    name: "Dean's List",
+    issuer: "The Ohio State University",
+    date: "2023 – Present",
+    description: "Awarded each semester for maintaining a GPA of 3.5 or above.",
+  },
 ];
 
-// --- CSS design tokens (mirrored in App.css via :root) ---
-// Kept here for reference; the actual CSS variables live in App.css
-export const THEME_REF = {
-  colors: {
-    bg:         "#0d0d0d",
-    bgSurface:  "#141414",
-    bgCard:     "#1a1a1a",
-    border:     "#1f2f1f",
-    accent:     "#39ff14",   // acid green
-    accentDim:  "#1a8c00",
-    text:       "#d4d4d4",
-    textMuted:  "#6b7280",
-    textDim:    "#9ca3af",
-    danger:     "#ff4444",
+// --- Certifications ---
+export const CERTIFICATIONS = [
+  {
+    name: "CompTIA Security+",
+    issuer: "CompTIA",
+    status: "In Progress",
+    expected: "2026",
+    description: "Industry-standard certification covering network security, threats, cryptography, and risk management.",
   },
-};
+];

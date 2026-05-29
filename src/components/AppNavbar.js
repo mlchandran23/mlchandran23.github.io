@@ -24,13 +24,12 @@ function AppNavbar() {
     <nav className="site-navbar">
       <div className="navbar-inner">
 
-        {/* Brand */}
         <Link to="/" className="navbar-brand" onClick={() => setOpen(false)}>
           <span className="brand-dot" aria-hidden="true" />
           {SITE.name}
         </Link>
 
-        {/* Mobile toggle */}
+        {/* Mobile */}
         <button
           className="nav-toggle"
           onClick={() => setOpen(o => !o)}

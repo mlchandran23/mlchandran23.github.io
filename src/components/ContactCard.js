@@ -5,7 +5,7 @@ import { useState } from "react";
  * Props:
  *   label   — display label (e.g. "Email")
  *   value   — display text
- *   icon    — emoji or character icon
+ *   icon    — icon
  *   link    — URL to open (if not copy)
  *   copy    — boolean: copy value to clipboard on click
  *   hint    — small hint text below value
