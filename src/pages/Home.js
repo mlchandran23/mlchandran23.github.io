@@ -80,7 +80,7 @@ function Home() {
           </div>
         </div> */}
 
-        {/* ── Technical Skills ────────────────────────── */}
+        {/* ── Technical Skills ──────────────────────────
         <section className="fade-in fade-in-delay-2" style={{ marginBottom: "var(--gap-xl)" }}>
           <div className="section-heading">
             <div className="sh-label">Skills</div>
@@ -113,9 +113,9 @@ function Home() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
-        {/* ── Currently Working On ────────────────────── */}
+        {/* ── Currently Working On ────────────────────── 
         <div className="cta-strip fade-in fade-in-delay-3">
           <h3>Currently Working On</h3>
           <ul>
@@ -123,7 +123,7 @@ function Home() {
             <li>Custom SIEM Tool on Raspberry Pi</li>
             <li>High-Performance TCP Port Scanner in Python</li>
           </ul>
-        </div>
+        </div> */}
 
       </div>
     </main>

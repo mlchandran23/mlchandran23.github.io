@@ -66,7 +66,7 @@ function Contact() {
         >
           <h3>// availability</h3>
           <ul>
-            <li>Open to summer 2027 internships in cybersecurity</li>
+            <li>Open to summer 2026 internships in cybersecurity</li>
             <li>Columbus, OH · willing to relocate or work remotely</li>
           </ul>
         </div>

@@ -1,16 +1,15 @@
 // ============================================================
 //  SITE CONFIG — single point of control
-//  Edit this file to update colors, fonts, nav, content, etc.
 // ============================================================
 
 // --- Identity ---
 export const SITE = {
   name: "Matthew Chandran",
   shortName: "Matt Chandran",
-  tagline: "CS Student · Cybersecurity · SFS Scholar",
+  tagline: "CS Student · Cybersecurity",
   subtitle: "B.S. Computer & Information Sciences @ The Ohio State University",
   email: "mattchandran23@gmail.com",
-  linkedin: "https://www.linkedin.com/in/matthew-chandran-18bb56384/",
+  linkedin: "https://www.linkedin.com/in/matthew-chandran",
   github: "https://github.com/mlchandran23",
   githubUser: "mlchandran23",
   resumePdf: "/matthew_chandran_resume.pdf",
@@ -30,8 +29,8 @@ export const NAV_LINKS = [
 // --- Skills (used on Home + About) ---
 export const SKILLS = {
   languages: ["Python", "C", "Java", "JavaScript / TypeScript", "Ruby", "Bash"],
-  security:  ["Linux Systems", "Network Scanning", "Log Analysis", "Web Security (OWASP Top 10)", "Burp Suite", "Ghidra", "Wireshark"],
-  tools:     ["Git / GitHub", "Asyncio", "REST APIs", "React", "Ruby on Rails", "SQLite"],
+  security:  ["Linux Systems", "Network Scanning", "Log Analysis", "Web Security (OWASP Top 10)"],
+  tools:     ["Git", "Burp Suite", "Ghidra", "Wireshark", "Nmap", "Kali Linux"],
 };
 
 // --- Projects ---
