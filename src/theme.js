@@ -12,7 +12,8 @@ export const SITE = {
   linkedin: "https://www.linkedin.com/in/matthew-chandran",
   github: "https://github.com/mlchandran23",
   githubUser: "mlchandran23",
-  resumePdf: "/matthew_chandran_resume.pdf",
+  photo: "/images/Portrait_placeholder.png",
+  resumePdf: "/documents/matthew_chandran_resume.pdf",
   lastUpdated: "May 2026",
 };
 
@@ -104,7 +105,7 @@ export const CTF_WRITEUPS = [
     description:
       "Identified and exploited an insecure authentication mechanism in a web application challenge. Analyzed HTTP requests with Burp Suite to discover a JWT signature bypass, then crafted a forged token to gain admin access.",
     writeupLink: "https://github.com/mlchandran23/BuckeyeCTF-2025",
-    image: "/ctf/osu-cyber.png",
+    image: "/images/osu-cyber.png",
     technologies: ["Burp Suite", "JWT", "Python", "HTTP"],
     placement: null,
   },
@@ -117,7 +118,7 @@ export const CTF_WRITEUPS = [
     description:
       "Inspected file metadata and used Linux command-line tools to extract hidden information embedded in an image file. Applied steganography techniques and hex analysis to recover the flag.",
     writeupLink: "https://github.com/mlchandran23/BuckeyeCTF-2025",
-    image: "/ctf/osu-cyber.png",
+    image: "/images/osu-cyber.png",
     technologies: ["Linux", "Bash", "Steganography", "Hex Analysis"],
     placement: null,
   },
@@ -162,14 +163,14 @@ export const EDUCATION = [
       "Relevant Coursework: Operating Systems, Computer Networking, Web Applications, Low Level Programming",
     ],
   },
-  {
-    degree: "M.S. Computer Science and Engineering (Combined B.S./M.S.)",
-    school: "The Ohio State University",
-    location: "Columbus, OH",
-    dates: "May 2028 (expected)",
-    gpa: null,
-    details: [],
-  },
+  // {
+  //   degree: "M.S. Computer Science and Engineering (Combined B.S./M.S.)",
+  //   school: "The Ohio State University",
+  //   location: "Columbus, OH",
+  //   dates: "May 2028 (expected)",
+  //   gpa: null,
+  //   details: [],
+  // },
 ];
 
 // --- Awards & Honors ---

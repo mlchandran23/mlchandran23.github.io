@@ -107,7 +107,7 @@ function About() {
               </div>
 
               <div className="skill-group">
-                <div className="skill-group-label">Tools &amp; Frameworks</div>
+                <div className="skill-group-label">Tools</div>
                 <div className="tags">
                   {SKILLS.tools.map(s => (
                     <span key={s} className="tag">{s}</span>
