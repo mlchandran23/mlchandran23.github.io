@@ -117,7 +117,7 @@ export const CTF_WRITEUPS = [
     category: "Forensics",
     description:
       "Inspected file metadata and used Linux command-line tools to extract hidden information embedded in an image file. Applied steganography techniques and hex analysis to recover the flag.",
-    writeupLink: "https://github.com/mlchandran23/BuckeyeCTF-2025",
+    writeupLink: "https://github.com/mlchandran23/BootcampCTF",
     image: "/images/osu-cyber.png",
     technologies: ["Linux", "Bash", "Steganography", "Hex Analysis"],
     placement: null,
