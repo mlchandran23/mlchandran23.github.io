@@ -446,10 +446,23 @@ a:hover { color: var(--accent-dark); }
 .project-card .pc-status {
   font-size: 0.68rem;
   font-weight: 600;
-  padding: 0.18rem 0.5rem;
+  padding: 0.15rem 0.55rem;
   border-radius: 99px;
   flex-shrink: 0;
   margin-top: 0.1rem;
+}
+
+.pc-status {
+  display: inline-flex;
+  align-items: center;
+
+  font-size: 0.72rem;
+  font-weight: 500;
+
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+
+  border: 1px solid; /* IMPORTANT: don't rely on inherited */
 }
 
 .pc-status.status-progress {
@@ -606,7 +619,7 @@ a:hover { color: var(--accent-dark); }
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 19, 32, 0.45);
+  background: rgba(15, 19, 32, 0.5);
   backdrop-filter: blur(6px);
   z-index: 2000;
   display: flex;
@@ -617,61 +630,121 @@ a:hover { color: var(--accent-dark); }
 }
 
 .modal-box {
+  padding: 0.5rem;
   background: var(--bg-surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  max-width: 620px;
+  max-width: 580px;
   width: 100%;
-  max-height: 85vh;
-  overflow-y: auto;
+  max-height: 88vh;
+  overflow: hidden;           /* clip children to the rounded corners */
+  display: flex;
+  flex-direction: column;
   animation: slideUp 0.2s ease;
   box-shadow: var(--shadow-lg);
 }
 
+/* Header — fixed at top, never scrolls */
 .modal-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  padding: var(--gap-lg);
+  gap: var(--gap-md);
+  padding: 1.5rem 1.75rem 1.25rem;
   border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
 }
 
 .modal-header h3 {
   font-family: var(--font-display);
   color: var(--text-heading);
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 600;
+  line-height: 1.3;
+  /* allow long titles to wrap instead of pushing the close button off-screen */
+  flex: 1;
+  min-width: 0;
 }
 
-.modal-body { padding: var(--gap-lg); }
+/* Body — the only scrolling region */
+.modal-body {
+  padding: 1.5rem 1.75rem;
+  overflow-y: auto;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
 
+/* Technologies block inside the body */
+.modal-tech-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modal-tech-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.modal-tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+/* Divider between tech and description */
+.modal-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0;
+}
+
+/* Description text */
+.modal-desc {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Footer — fixed at bottom, never scrolls */
 .modal-footer {
-  padding: var(--gap-md) var(--gap-lg);
+  padding: 1rem 1.75rem;
   border-top: 1px solid var(--border);
   display: flex;
   gap: var(--gap-sm);
   justify-content: flex-end;
   background: var(--bg);
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  flex-shrink: 0;
 }
 
+/* Close button in the header */
 .modal-close {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
   background: none;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--text-muted);
-  font-size: 1.1rem;
+  font-size: 1rem;
+  line-height: 1;
   cursor: pointer;
   transition: var(--transition);
+  margin-top: 0.1rem; /* optically align with first line of title */
 }
 
 .modal-close:hover {
-  border-color: var(--text-dim);
+  border-color: var(--border-bright);
+  background: var(--bg);
   color: var(--text-heading);
 }
 
@@ -1248,6 +1321,18 @@ a:hover { color: var(--accent-dark); }
 [data-theme="dark"] .ctf-img-wrap {
   background: #ffffff;
   border-bottom-color: rgba(255,255,255,0.08);
+}
+
+[data-theme="dark"] .pc-status.status-progress {
+  color: #fbbf24;                /* brighter amber */
+  background: rgba(251,191,36,0.12);
+  border-color: rgba(251,191,36,0.35);
+}
+
+[data-theme="dark"] .pc-status.status-done {
+  color: #4ade80;                /* softer green */
+  background: rgba(74,222,128,0.12);
+  border-color: rgba(74,222,128,0.35);
 }
 
 .theme-toggle {

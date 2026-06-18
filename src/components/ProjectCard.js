@@ -20,7 +20,7 @@ function ProjectCard({ title, shortDesc, longDesc, githubLink, technologies = []
 
   return (
     <>
-      {/* Card */}
+      {/* ── Card ─────────────────────────────────── */}
       <div
         className="project-card fade-in"
         onClick={() => setOpen(true)}
@@ -50,17 +50,19 @@ function ProjectCard({ title, shortDesc, longDesc, githubLink, technologies = []
         <div className="pc-hint">↗ click to expand</div>
       </div>
 
-      {/* Modal */}
+      {/* ── Modal ────────────────────────────────── */}
       {open && (
         <div
           className="modal-overlay"
           onClick={(e) => e.target === e.currentTarget && setOpen(false)}
         >
-          <div className="modal-box">
+          <div className="modal-box" role="dialog" aria-modal="true" aria-label={title}>
+
+            {/* Header */}
             <div className="modal-header">
               <h3>{title}</h3>
               <button
-                className="btn-icon"
+                className="modal-close"
                 onClick={() => setOpen(false)}
                 aria-label="Close"
               >
@@ -68,22 +70,36 @@ function ProjectCard({ title, shortDesc, longDesc, githubLink, technologies = []
               </button>
             </div>
 
+            {/* Body — scrolls independently */}
             <div className="modal-body">
+
+              {/* Status badge */}
+              {status && (
+                <div>
+                  <span className={`pc-status ${statusClass}`}>{status}</span>
+                </div>
+              )}
+
+              {/* Key Technologies */}
               {technologies.length > 0 && (
-                <div style={{ marginBottom: "var(--gap-md)" }}>
-                  <div className="skill-group-label" style={{ marginBottom: "0.5rem" }}>Technologies</div>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.35rem" }}>
+                <div className="modal-tech-block">
+                  <div className="modal-tech-label">Key Technologies</div>
+                  <div className="modal-tech-tags">
                     {technologies.map((tech, i) => (
                       <span key={i} className="tag">{tech}</span>
                     ))}
                   </div>
                 </div>
               )}
-              <p style={{ fontSize: "0.9rem", color: "var(--text-dim)", lineHeight: 1.7 }}>
-                {longDesc}
-              </p>
+
+              <div className="modal-divider" />
+
+              {/* Description */}
+              <p className="modal-desc">{longDesc}</p>
+
             </div>
 
+            {/* Footer */}
             <div className="modal-footer">
               {githubLink && (
                 <a
@@ -99,6 +115,7 @@ function ProjectCard({ title, shortDesc, longDesc, githubLink, technologies = []
                 Close
               </button>
             </div>
+
           </div>
         </div>
       )}
