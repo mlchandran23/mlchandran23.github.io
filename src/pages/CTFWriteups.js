@@ -43,8 +43,7 @@ function CTFWriteups() {
           }}
         >
           Documented solutions to Capture-The-Flag challenges across web exploitation, cryptography,
-          forensics, and more. As CTF Lead for the OSU Cybersecurity Club, I organize and compete in
-          competitions to develop practical offensive security skills.
+          forensics, and more.
         </p>
 
         {/* ── Filter ─────────────────────────────── */}
@@ -89,9 +88,8 @@ function CTFWriteups() {
         <div className="cta-strip fade-in fade-in-delay-3" style={{ marginTop: "var(--gap-xl)" }}>
           <h3>About My CTF Involvement</h3>
           <ul>
-            <li>CTF Lead at the OSU Cybersecurity Club — organize and run club competitions</li>
+            <li>CTF Lead at the OSU Cybersecurity Club — Assist in organizing club competitions</li>
             <li>Competed in BuckeyeCTF 2025 hosted at The Ohio State University</li>
-            <li>Focus areas: web exploitation, forensics, cryptography, and OSINT</li>
           </ul>
         </div>
 

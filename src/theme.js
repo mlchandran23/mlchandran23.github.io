@@ -103,10 +103,10 @@ export const CTF_WRITEUPS = [
     organizer: "The Ohio State University",
     categories: ["Forensics", "Misc", "Web"],
     description:
-      "Identified and exploited an insecure authentication mechanism in a web application challenge. Analyzed HTTP requests with Burp Suite to discover a JWT signature bypass, then crafted a forged token to gain admin access.",
+      "Various writeups from the Buckeye CTF 2025 challenges.",
     writeupLink: "https://github.com/mlchandran23/BuckeyeCTF-2025",
     image: "/images/osu-cyber.png",
-    technologies: ["Burp Suite", "JWT", "Python", "HTTP"],
+    technologies: ["Linux", "DevTools", "Bash", "Python", "DOSBox", "DocProps"],
     placement: null,
   },
   {
@@ -114,12 +114,12 @@ export const CTF_WRITEUPS = [
     challengeName: "Bootcamp CTF",
     ctfName: "Bootcamp CTF",
     organizer: "The Ohio State University",
-    categories: ["Forensics", "Web", "Cryptography", "Reverse Engineering"],
+    categories: ["Forensics", "Cryptography", "Web", "Reverse Engineering"],
     description:
-      "Inspected file metadata and used Linux command-line tools to extract hidden information embedded in an image file. Applied steganography techniques and hex analysis to recover the flag.",
+      "Various writeups from the Ohio State Cyber Bootcamp challenges.",
     writeupLink: "https://github.com/mlchandran23/BootcampCTF",
     image: "/images/osu-cyber.png",
-    technologies: ["Linux", "Bash", "Steganography", "Hex Analysis"],
+    technologies: ["Linux", "Bash", "Ghidra", "DevTools", "Python"],
     placement: null,
   },
 ];
