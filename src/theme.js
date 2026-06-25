@@ -12,7 +12,7 @@ export const SITE = {
   linkedin: "https://www.linkedin.com/in/matthew-chandran",
   github: "https://github.com/mlchandran23",
   githubUser: "mlchandran23",
-  photo: "/images/Portrait_placeholder.png",
+  photo: "/images/Portrait.jpg",
   resumePdf: "/documents/matthew_chandran_resume.pdf",
   lastUpdated: "May 2026",
 };

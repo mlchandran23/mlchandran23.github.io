@@ -176,6 +176,7 @@ a:hover { color: var(--accent-dark); }
   align-items: center;
   gap: 0.15rem;
   list-style: none;
+  padding-top: 0.8rem;
 }
 
 .nav-links a {
