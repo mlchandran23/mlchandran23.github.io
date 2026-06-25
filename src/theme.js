@@ -14,7 +14,7 @@ export const SITE = {
   githubUser: "mlchandran23",
   photo: "/images/Portrait.jpg",
   resumePdf: "/documents/matthew_chandran_resume.pdf",
-  lastUpdated: "May 2026",
+  lastUpdated: "June 2026",
 };
 
 // --- Navigation ---
