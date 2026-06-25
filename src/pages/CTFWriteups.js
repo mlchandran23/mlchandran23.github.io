@@ -4,7 +4,14 @@ import CTFCard from "../components/CTFCard";
 import SectionHeading from "../components/SectionHeading";
 
 // Derive unique categories from the data for filter buttons
-const ALL_CATEGORIES = ["All", ...Array.from(new Set(CTF_WRITEUPS.map(w => w.category)))];
+const ALL_CATEGORIES = [
+  "All",
+  ...Array.from(
+    new Set(
+      CTF_WRITEUPS.flatMap(w => w.categories)
+    )
+  )
+];
 
 function CTFWriteups() {
   useEffect(() => {
@@ -14,7 +21,9 @@ function CTFWriteups() {
   const [filter, setFilter] = useState("All");
 
   const visible = CTF_WRITEUPS.filter(w =>
-    filter === "All" ? true : w.category === filter
+  filter === "All"
+    ? true
+    : w.categories.includes(filter)
   );
 
   return (
@@ -50,7 +59,7 @@ function CTFWriteups() {
               <span style={{ marginLeft: "0.3rem", opacity: 0.6 }}>
                 ({cat === "All"
                   ? CTF_WRITEUPS.length
-                  : CTF_WRITEUPS.filter(w => w.category === cat).length})
+                  : CTF_WRITEUPS.filter(w => w.categories.includes(cat)).length})
               </span>
             </button>
           ))}

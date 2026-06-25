@@ -1,15 +1,15 @@
 // Maps category string → CSS class suffix for color coding
-function getCategoryClass(category) {
+function getCategoryClass(categories) {
   const map = {
     "Web":       "web",
     "Forensics": "forensics",
-    "Crypto":    "crypto",
+    "Cryptography":    "crypto",
     "Pwn":       "pwn",
-    "Rev":       "rev",
+    "Reverse Engineering":       "rev",
     "Misc":      "misc",
     "OSINT":     "osint",
   };
-  return map[category] || "misc";
+  return map[categories] || "misc";
 }
 
 /**
@@ -29,14 +29,15 @@ function CTFCard({
   challengeName,
   ctfName,
   organizer,
-  category,
+  categories = [],
   description,
   writeupLink,
   image,
   technologies = [],
   placement,
 }) {
-  const catClass = getCategoryClass(category);
+  const primaryCategory = categories[0] || "Misc";
+  const catClass = getCategoryClass(primaryCategory);
 
   return (
     <div className="ctf-card fade-in">
@@ -65,7 +66,14 @@ function CTFCard({
         <div className="ctf-meta">
           <span className="ctf-organizer">{organizer}</span>
           <span className="ctf-dot" />
-          <span className={`cat-badge cat-${catClass}`}>{category}</span>
+          {categories.map(cat => (
+            <span
+              key={cat}
+              className={`cat-badge cat-${getCategoryClass(cat)}`}
+            >
+              {cat}
+            </span>
+          ))}
           {placement && <span className="tag tag-success">{placement}</span>}
         </div>
 
