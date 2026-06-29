@@ -31,7 +31,7 @@ export const NAV_LINKS = [
 export const SKILLS = {
   languages: ["Python", "C", "Java", "JavaScript / TypeScript", "Ruby", "Bash"],
   security:  ["Linux Systems", "Network Scanning", "Log Analysis", "Web Security (OWASP Top 10)"],
-  tools:     ["Git", "Burp Suite", "Ghidra", "Wireshark", "Nmap", "Kali Linux"],
+  tools:     ["Git", "Burp Suite", "Ghidra", "Wireshark", "Nmap", "Kali Linux", "ExifTool"],
 };
 
 // --- Projects ---
@@ -119,7 +119,7 @@ export const CTF_WRITEUPS = [
       "Various writeups from the Ohio State Cyber Bootcamp challenges.",
     writeupLink: "https://github.com/mlchandran23/BootcampCTF",
     image: "/images/osu-cyber.png",
-    technologies: ["Linux", "Bash", "Ghidra", "DevTools", "Python"],
+    technologies: ["Linux", "Bash", "Ghidra", "DevTools", "Python", "Exiftool", "Wireshark"],
     placement: null,
   },
 ];
