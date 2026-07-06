@@ -117,7 +117,7 @@ export const CTF_WRITEUPS = [
     categories: ["Forensics", "Cryptography", "Web", "Reverse Engineering"],
     description:
       "Various writeups from the Ohio State Cyber Bootcamp challenges.",
-    writeupLink: "https://github.com/mlchandran23/BootcampCTF",
+    writeupLink: "https://github.com/mlchandran23/OSU-Bootcamp-CTF",
     image: "/images/osu-cyber.png",
     technologies: ["Linux", "Bash", "Ghidra", "DevTools", "Python", "Exiftool", "Wireshark"],
     placement: null,
