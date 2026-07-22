@@ -23,7 +23,7 @@ function Home() {
               </h1>
 
               <p className="hero-sub">
-                Computer and Information Science student at <strong>The Ohio State University</strong> specializing
+                Computer and Information Sciences student at <strong>The Ohio State University</strong> specializing
                 in cybersecurity. Buckeye CyberCorps SFS Scholarship recipient and CTF Lead at the
                 OSU Cybersecurity Club.
               </p>

@@ -27,7 +27,7 @@ export const NAV_LINKS = [
   { label: "Contact",     path: "/contact"  },
 ];
 
-// --- Skills (used on Home + About) ---
+// --- Skills (About) ---
 export const SKILLS = {
   languages: ["Python", "C", "Java", "JavaScript / TypeScript", "Ruby", "Bash"],
   security:  ["Linux Systems", "Network Scanning", "Log Analysis", "Web Security (OWASP Top 10)"],
@@ -130,7 +130,7 @@ export const EXPERIENCE = [
     role: "Program Instructor",
     org: "Tech Corps",
     location: "Columbus, OH",
-    dates: "May 2026 – Present",
+    dates: "May 2026 – July 2026",
     bullets: [
       "Taught foundational AI concepts through hands-on instruction and guided problem solving.",
       "Supported high school students, improving accessibility to technical education.",
@@ -140,7 +140,7 @@ export const EXPERIENCE = [
     role: "Undergraduate Teaching Assistant",
     org: "The Ohio State University",
     location: "Columbus, OH",
-    dates: "January 2026 – Present",
+    dates: "January 2026 – July 2026",
     bullets: [
       "CSE 2431 (OS): Guided students in memory management, processes, and concurrency; debugged C programs in Linux.",
       "CSE 3901 (Web Apps): Mentored students in full-stack dev, secure coding, and input validation.",
@@ -177,10 +177,10 @@ export const EDUCATION = [
 export const AWARDS = [
   {
     name: "Buckeye CyberCorps SFS Scholarship",
-    issuer: "U.S. National Science Foundation / The Ohio State University",
-    date: "2024",
+    issuer: "NSF / The Ohio State University",
+    date: "2026",
     description:
-      "Highly competitive U.S. government scholarship for students pursuing cybersecurity careers in federal service.",
+      "U.S. government scholarship for students pursuing cybersecurity careers in government service.",
   },
   {
     name: "Dean's List",

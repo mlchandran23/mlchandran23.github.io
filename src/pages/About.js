@@ -35,10 +35,6 @@ function About() {
                 <strong style={{ color: "var(--text-heading)" }}>CTF Lead</strong> for the OSU Cybersecurity Club,
                 organizing and leading competitions including web exploitation, cryptography, and reverse engineering.
               </p>
-              <p style={{ fontSize: "0.9rem", color: "var(--text-dim)", lineHeight: 1.8 }}>
-                I'm seeking <strong style={{ color: "var(--accent)" }}>cybersecurity internships</strong> where
-                I can apply skills developed through coursework, personal projects, and hands-on CTF competition.
-              </p>
             </div>
 
             {/* ── Education ──────────────────────── */}
