@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { SITE, NAV_LINKS } from "../theme";
+import { SITE } from "../theme";
 import { GitHubIcon, LinkedInIcon, EmailIcon } from "./Icons";
 
 
@@ -26,7 +25,7 @@ function Footer() {
         <br></br><small style={{ opacity: 0.7, fontSize: "0.8rem" }}>
           Hosted on GitHub Pages. No tracking cookies or personal data collected. View{" "}
           <a 
-            href="https://github.com" 
+            href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" 
             target="_blank" 
             rel="noopener noreferrer"
             style={{ textDecoration: "underline" }}
