@@ -30,7 +30,7 @@ function CTFWriteups() {
     <main>
       <div className="page-container">
 
-        <SectionHeading label="CTF" title="CTF Writeups" />
+        <SectionHeading label="// CTF" title="CTF Writeups" />
 
         <p
           className="fade-in"

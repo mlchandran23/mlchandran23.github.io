@@ -98,6 +98,19 @@ export const PROJECTS = [
 export const CTF_WRITEUPS = [
   {
     id: 1,
+    challengeName: "Cyber Challenge",
+    ctfName: "Cyber Challenge",
+    organizer: "Battelle",
+    categories: ["Reverse Engineering"],
+    description:
+      "Writeups from the Battelle Cyber Challenges: https://www.battelle.org/the-challenge",
+    writeupLink: "https://github.com/mlchandran23/battelle-cyber-challenges",
+    image: "/images/ctf_icon.png",
+    technologies: ["Linux", "Ghidra", "Qemu", "Python", "Bash",],
+    placement: null,
+  },
+  {
+    id: 2,
     challengeName: "Buckeye CTF 2025",
     ctfName: "BuckeyeCTF 2025",
     organizer: "The Ohio State University",
@@ -110,7 +123,7 @@ export const CTF_WRITEUPS = [
     placement: null,
   },
   {
-    id: 2,
+    id: 3,
     challengeName: "Bootcamp CTF",
     ctfName: "Bootcamp CTF",
     organizer: "The Ohio State University",

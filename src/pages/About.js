@@ -15,7 +15,7 @@ function About() {
     <main>
       <div className="page-container">
 
-        <SectionHeading label="About" title="About Me" />
+        <SectionHeading label="// About" title="About Me" />
 
         <div className="about-grid">
 
